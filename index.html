@@ -16,9 +16,66 @@
     <meta name="twitter:description" content="Don Chevere" />
     <meta name="twitter:image" content="https://rodolfoberrios.com/rodolfo.jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/rodolfo.jpeg" />
-    <link media="all" rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="rodolfo.jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 18px;
+            line-height: 150%;
+            color: #000;
+            padding: 0.5em;
+            text-align: left;
+        }
+
+        a {
+            color: #000;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #00a7da;
+        }
+
+        a img {
+            border: 0;
+        }
+
+        h1 {
+            line-height: 120%;
+        }
+
+        p {
+            margin: 12px 0;
+        }
+
+        #avatar {
+            height: auto;
+            display: block;
+            border-radius: 100%;
+            width: 100%;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 480px) {
+            body {
+                padding: 2em;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 500px;
+            }
+        }
+
+        .tabbed {
+            display: none;
+        }
+
+        .tabbed.--show {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
@@ -32,21 +89,22 @@
         </div>
         <div id="en" class="tabbed --show">
             <p>I'm an indie software developer from Chile. Some may know me for being the creator of <a
-                href="https://chevereto.com/" title="Image sharing software">Chevereto</a> and <a
-                href="https://chevere.org/" title="Extensible PHP framework">Chevere</a>.</p>
-            <p>❤ You can <a href="https://paypal.me/RodolfoBerrios" target="_blank">donate</a> to support my work. I'm mostly into development of self-hosted software.</p>
+                    href="https://chevereto.com/" title="Image sharing software">Chevereto</a> and <a
+                    href="https://chevere.org/" title="Extensible PHP framework">Chevere</a>.</p>
+            <p>❤ You can <a href="https://paypal.me/RodolfoBerrios" target="_blank">donate</a> to support my work. I'm
+                mostly into development of self-hosted software.</p>
         </div>
         <div id="es" class="tabbed">
-            <p>Soy un desarrollador independiente de Software proveniente de Chile. Algunos puede que me conozcan por ser el creador de <a
-                href="https://chevereto.com/" title="Software para compartir fotos">Chevereto</a> y <a
-                href="https://chevere.org/" title="Framework PHP extensible">Chevere</a>.</p>
+            <p>Soy un desarrollador independiente de Software proveniente de Chile. Algunos puede que me conozcan por
+                ser el creador de <a href="https://chevereto.com/" title="Software para compartir fotos">Chevereto</a> y
+                <a href="https://chevere.org/" title="Framework PHP extensible">Chevere</a>.</p>
             <p>❤ Puedes <a href="https://paypal.me/RodolfoBerrios" target="_blank"
-                title="👋🏾 ¿Una monedita para el Open Source loco?">donar</a> para apoyar mi trabajo. Me dedico principalmente al desarrollo de software auto-hospedado.</p>
+                    title="👋🏾 ¿Una monedita para el Open Source loco?">donar</a> para apoyar mi trabajo. Me dedico
+                principalmente al desarrollo de software auto-hospedado.</p>
         </div>
         <div id="zh-CN" class="tabbed">
-            <p>我是智利的独立软件开发人员。 有些人可能知道我是<a
-                href="https://chevereto.com/" title="Image sharing software">Chevereto</a>和<a
-                href="https://chevere.org/" title="Extensible PHP framework">Chevere</a>的创造者。</p>
+            <p>我是智利的独立软件开发人员。 有些人可能知道我是<a href="https://chevereto.com/" title="Image sharing software">Chevereto</a>和<a
+                    href="https://chevere.org/" title="Extensible PHP framework">Chevere</a>的创造者。</p>
             <p>❤ 您可以<a href="https://paypal.me/RodolfoBerrios" target="_blank">捐赠</a>以支持我的工作。 我主要从事自托管软件的开发。</p>
         </div>
         <p><a href="https://rodolfo.is/">Blog</a> · <a href="https://github.com/rodolfoberrios">GitHub</a> · <a
@@ -56,10 +114,10 @@
     </div>
     <script>
         let buttons = document.querySelectorAll(".tabs button");
-        document.querySelectorAll(".tabs button").forEach(function(button) {
-            button.addEventListener("click", function(e) {
+        document.querySelectorAll(".tabs button").forEach(function (button) {
+            button.addEventListener("click", function (e) {
                 let show = e.target.textContent;
-                document.querySelectorAll(".tabbed").forEach(function(tabbed) {
+                document.querySelectorAll(".tabbed").forEach(function (tabbed) {
                     tabbed.classList.toggle("--show", show == tabbed.getAttribute("id"));
                 });
             });
