@@ -67,11 +67,23 @@
                 max-width: 500px;
             }
         }
+        button {
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            font-weight:  bold;
+            color: #34495e;
+            border: none;
+            outline: 0;
+            background-color: #bdc3c7;
 
+        }
+        button.--active {
+            color: #3498db;
+        }
         .tabbed {
             display: none;
         }
-
         .tabbed.--show {
             display: block;
         }
@@ -83,7 +95,7 @@
         <img id="avatar" alt="rudy with dizzy" src="rodolfo.jpeg">
         <h1>Rodolfo Berríos</h1>
         <div class="tabs">
-            <button>en</button>
+            <button class="--active">en</button>
             <button>es</button>
             <button>zh-CN</button>
         </div>
@@ -117,6 +129,9 @@
         document.querySelectorAll(".tabs button").forEach(function (button) {
             button.addEventListener("click", function (e) {
                 let show = e.target.textContent;
+                buttons.forEach(function (button) {
+                    button.classList.toggle("--active", show == button.textContent);
+                });
                 document.querySelectorAll(".tabbed").forEach(function (tabbed) {
                     tabbed.classList.toggle("--show", show == tabbed.getAttribute("id"));
                 });
